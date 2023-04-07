@@ -13,3 +13,4 @@ dist_ssr
 
 .vscode/*
 .idea
+yarn.lock
