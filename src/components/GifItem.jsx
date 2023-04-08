@@ -1,4 +1,6 @@
-const GifItem = ({ id, url, title, copyToClipboard, showToast, setShowToast }) => {
+import PropTypes from "prop-types";
+
+export const GifItem = ({ id, url, title, copyToClipboard, setShowToast }) => {
     return (
         <img
             key={id}
@@ -14,4 +16,7 @@ const GifItem = ({ id, url, title, copyToClipboard, showToast, setShowToast }) =
     );
 };
 
-export default GifItem;
+GifItem.prototype = {
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+}

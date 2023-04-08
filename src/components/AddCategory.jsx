@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const AddCategory = ( { onNewCategory } ) => {
 
@@ -24,7 +25,7 @@ export const AddCategory = ( { onNewCategory } ) => {
             <div className="col-md-6">
                 <div className="form">
                     <FontAwesomeIcon className="fa-search" icon={ faSearch }/>
-                    <form onSubmit={ onSubmit }>
+                    <form onSubmit={ onSubmit } aria-label="form">
                         <input
                             type="text"
                             className="form-control form-input"
@@ -37,4 +38,9 @@ export const AddCategory = ( { onNewCategory } ) => {
             </div>
         </div>
     )
+}
+
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
